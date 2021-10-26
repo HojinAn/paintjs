@@ -1,5 +1,6 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
+const colors = document.getElementsByClassName("jsColor");
 
 //canvas를 element로 만드는 거기 때문에 width, height를 지정해줘야 한다.
 canvas.width = 500;
@@ -32,9 +33,18 @@ function onMouseMove(event) {
   } // 이 if else는 마우스가 canvas에서 움직이는 내내 실행된다. start point, ending point가 있는게 아니다.
 }
 
+function handleColorClick(event) {
+  const color = event.target.style.backgroundColor;
+  ctx.strokeStyle = color;
+}
+
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
   canvas.addEventListener("mousedown", startPainting);
   canvas.addEventListener("mouseup", stopPainting);
   canvas.addEventListener("mouseleave", stopPainting);
 }
+
+Array.from(colors).forEach((color) =>
+  color.addEventListener("click", handleColorClick)
+);
