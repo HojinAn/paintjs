@@ -1,5 +1,7 @@
 # PaintJS
 
+[바닐라 JS로 그림판 만들기 – 노마드 코더 Nomad Coders](https://nomadcoders.co/javascript-for-beginners-2)
+
 ## 추가 개선해야 할 사항
 
 ---
